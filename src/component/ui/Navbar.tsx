@@ -126,7 +126,7 @@ const Navbar = () => {
           <>
             {/* Overlay */}
             <motion.div
-              className="fixed inset-0 bg-black/40 z-40"
+              className="fixed inset-0  z-40"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -135,41 +135,80 @@ const Navbar = () => {
 
             {/* Menu Panel */}
             <motion.div
-              initial={{ opacity: 0, y: -30, scale: 0.95 }}
+              initial={{ opacity: 0, y: -20, scale: 0.98 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -30, scale: 0.95 }}
-              transition={{ duration: 0.25 }}
-              className="md:hidden absolute top-20 left-0 right-0 bg-white z-50 px-6 py-6 space-y-5 shadow-xl rounded-b-2xl"
+              exit={{ opacity: 0, y: -20, scale: 0.98 }}
+              transition={{ duration: 0.2 }}
+              className="fixed top-20 left-0 right-0 md:hidden bg-white z-50 px-6 py-6 space-y-6 shadow-xl rounded-b-2xl"
             >
-              <Link href="/" onClick={() => setOpen(false)}>
+              {/* Home */}
+              <Link
+                href="/"
+                onClick={() => setOpen(false)}
+                className="block font-medium text-gray-800"
+              >
                 Home
               </Link>
 
-              <div>
-                <p className="font-semibold">Service</p>
-                <div className="ml-4 mt-2 space-y-2">
-                  <Link href="/tour" onClick={() => setOpen(false)}>
+              {/* Service */}
+              <div className="space-y-2">
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                  Service
+                </p>
+
+                <div className="rounded-xl p-3 space-y-3">
+                  <Link
+                    href="/tour"
+                    onClick={() => setOpen(false)}
+                    className="block text-gray-700 hover:bg-gray-50 p-1 hover:text-green-700 transition"
+                  >
                     Tour
                   </Link>
-                  <Link href="/umrah" onClick={() => setOpen(false)}>
+
+                  <Link
+                    href="/umrah"
+                    onClick={() => setOpen(false)}
+                    className="block text-gray-700 hover:bg-gray-50 p-1 hover:text-green-700 transition"
+                  >
                     Umrah
                   </Link>
                 </div>
               </div>
 
-              <div>
-                <p className="font-semibold">Document</p>
-                <div className="ml-4 mt-2 space-y-2">
-                  <Link href="#">Passport</Link>
-                  <Link href="#">Visa</Link>
+              {/* Document */}
+              <div className="space-y-2">
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider">
+                  Document
+                </p>
+
+                <div className=" rounded-xl p-3 space-y-3">
+                  <Link
+                    href="#"
+                    className="block text-gray-700 hover:bg-gray-50 p-1 hover:text-green-700 transition"
+                  >
+                    Passport
+                  </Link>
+
+                  <Link
+                    href="#"
+                    className="block text-gray-700 hover:bg-gray-50 p-1 hover:text-green-700 transition"
+                  >
+                    Visa
+                  </Link>
                 </div>
               </div>
 
-              <Link href="/about" onClick={() => setOpen(false)}>
+              {/* About */}
+              <Link
+                href="/about"
+                onClick={() => setOpen(false)}
+                className="block font-medium text-gray-800"
+              >
                 About
               </Link>
 
-              <button className="w-full rounded-full bg-green-800 text-white py-2 font-semibold">
+              {/* CTA */}
+              <button className="w-full rounded-xl bg-green-800 text-white py-3 font-semibold hover:bg-green-900 transition">
                 Contact us
               </button>
             </motion.div>

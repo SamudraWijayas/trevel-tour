@@ -110,7 +110,7 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.4 }}
-                className="text-5xl font-bold leading-tight mb-4"
+                className="lg:text-5xl text-3xl font-bold leading-tight mb-4"
               >
                 Discover Your Next Adventure with {""}
                 <span className="text-green-800">Ndestours</span>
@@ -149,7 +149,7 @@ export default function Home() {
         <section className="px-6 md:px-10 py-16 bg-gray-50">
           {/* Title */}
           <motion.h3
-            className="text-center text-4xl font-bold mb-12"
+            className="text-center lg:text-4xl text-3xl font-bold mb-12"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -221,7 +221,7 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, ease: "easeOut" }}
             >
-              <h2 className="text-3xl md:text-4xl font-bold">
+              <h2 className="lg:text-4xl text-3xl font-bold">
                 About <span className="text-green-800">Ndestours</span>
               </h2>
               <p className="mt-3 text-gray-600 max-w-2xl mx-auto text-md">
