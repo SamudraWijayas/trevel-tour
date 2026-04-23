@@ -146,12 +146,18 @@ const Navbar = () => {
         </nav>
 
         {/* BUTTON */}
-        <button className="hidden md:block rounded-full bg-green-800 text-white px-5 py-2 text-sm font-semibold hover:bg-green-900 transition">
+        <Link
+          href="/contact"
+          className="hidden md:block rounded-full bg-green-800 text-white px-5 py-2 text-sm font-semibold hover:bg-green-900 transition"
+        >
           Contact us
-        </button>
+        </Link>
 
         {/* MOBILE BUTTON */}
-        <button className={`md:hidden ${scrolled ? "text-black" : "text-white"}`} onClick={() => setOpen(!open)}>
+        <button
+          className={`md:hidden ${scrolled ? "text-black" : "text-white"}`}
+          onClick={() => setOpen(!open)}
+        >
           {open ? <X /> : <Menu />}
         </button>
       </div>

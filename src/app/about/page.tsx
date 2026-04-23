@@ -78,35 +78,58 @@ export default function AboutPage() {
         </section>
 
         {/* VISION MISSION */}
-        <section className="px-6 md:px-10 py-20 bg-gray-50">
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10">
+        <section className="px-6 md:px-10 py-24 bg-gradient-to-b from-white to-gray-50">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-10 items-stretch">
             {/* VISION */}
             <motion.div
-              className="bg-white p-8 rounded-2xl shadow"
+              className="relative bg-white p-10 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition group overflow-hidden"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-3 text-green-700">Visi</h3>
-              <p className="text-sm text-gray-600">
+              {/* accent line */}
+              <div className="absolute top-0 left-0 w-full h-1 bg-green-600/80" />
+
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-600"></span>
+                Visi Kami
+              </h3>
+
+              <p className="text-sm leading-relaxed text-gray-600">
                 Menjadi perusahaan tour & event organizer terpercaya di
-                Indonesia yang menghadirkan pengalaman terbaik bagi setiap
+                Indonesia yang menghadirkan pengalaman perjalanan yang tidak
+                hanya nyaman, tetapi juga berkesan dan bernilai bagi setiap
                 klien.
               </p>
             </motion.div>
 
             {/* MISSION */}
             <motion.div
-              className="bg-white p-8 rounded-2xl shadow"
+              className="relative bg-white p-10 rounded-3xl border border-gray-100 shadow-sm hover:shadow-lg transition group overflow-hidden"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
+              transition={{ delay: 0.15 }}
+              viewport={{ once: true }}
             >
-              <h3 className="text-xl font-bold mb-3 text-green-700">Misi</h3>
-              <ul className="text-sm text-gray-600 space-y-2">
-                <li>• Memberikan layanan profesional dan terpercaya</li>
-                <li>• Menghadirkan pengalaman perjalanan terbaik</li>
-                <li>• Mengelola event dengan detail dan kualitas tinggi</li>
-                <li>• Membangun hubungan jangka panjang dengan klien</li>
+              <div className="absolute top-0 left-0 w-full h-1 bg-green-600/80" />
+
+              <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-600"></span>
+                Misi Kami
+              </h3>
+
+              <ul className="space-y-3 text-sm text-gray-600">
+                {[
+                  "Memberikan layanan profesional, aman, dan terpercaya",
+                  "Menghadirkan pengalaman perjalanan yang berkesan",
+                  "Mengelola event dengan standar kualitas tinggi",
+                  "Membangun hubungan jangka panjang dengan klien",
+                ].map((item, i) => (
+                  <li key={i} className="flex gap-3 leading-relaxed">
+                    <span className="text-green-600 mt-1">▹</span>
+                    <span>{item}</span>
+                  </li>
+                ))}
               </ul>
             </motion.div>
           </div>

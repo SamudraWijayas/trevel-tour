@@ -7,39 +7,120 @@ import Image from "next/image";
 
 const tours = [
   {
-    title: "3D2N Bali Experience",
-    price: "Rp 3.500.000",
+    title: "Maldives Paradise",
+    duration: "3 Hari 2 Malam",
+    price: "Rp. 20.000.000",
+    image: "/images/maldives.jpg",
+    description:
+      "Nikmati keindahan laut biru jernih dan vila eksklusif di atas air dengan pengalaman liburan mewah.",
+  },
+  {
+    title: "Bali Escape",
+    duration: "3 Hari 2 Malam",
+    price: "Rp. 3.000.000",
     image: "/images/bali.jpg",
-    location: "Bali, Indonesia",
+    description:
+      "Jelajahi pantai eksotis, budaya unik, dan suasana tropis khas Pulau Dewata.",
   },
   {
-    title: "3D2N Yogyakarta Heritage",
-    price: "Rp 3.200.000",
+    title: "Yogyakarta Heritage",
+    duration: "3 Hari 2 Malam",
+    price: "Rp. 3.000.000",
     image: "/images/yogya.jpg",
-    location: "Yogyakarta, Indonesia",
+    description:
+      "Nikmati wisata budaya ke Candi Borobudur, Malioboro, dan kuliner khas Jogja.",
   },
   {
-    title: "4D3N Labuan Bajo Trip",
-    price: "Rp 6.500.000",
+    title: "Labuan Bajo Adventure",
+    duration: "3 Hari 2 Malam",
+    price: "Rp. 5.500.000",
     image: "/images/labuan-bajo.jpg",
-    location: "NTT, Indonesia",
+    description:
+      "Eksplorasi Pulau Komodo, snorkeling di laut jernih, dan panorama pulau eksotis.",
   },
   {
-    title: "5D4N Singapore - Malaysia",
-    price: "Rp 7.500.000",
-    image: "/images/singapura.jpg",
-    location: "Singapore & Malaysia",
+    title: "Bromo Sunrise Trip",
+    duration: "3 Hari 2 Malam",
+    price: "Rp. 2.500.000",
+    image: "/images/bromo.jpg",
+    description:
+      "Saksikan matahari terbit spektakuler di puncak Gunung Bromo dengan panorama luar biasa.",
+  },
+  {
+    title: "Lombok Island Tour",
+    duration: "4 Hari 3 Malam",
+    price: "Rp. 4.500.000",
+    image: "/images/lombok.jpg",
+    description:
+      "Jelajahi keindahan pantai Lombok dan Gili dengan suasana tenang dan alami.",
   },
 ];
+
+function Packages({
+  title,
+  price,
+  image,
+  duration,
+  description,
+}: {
+  title: string;
+  price: string;
+  image: string;
+  duration: string;
+  description: string;
+}) {
+  return (
+    <div className="group rounded-2xl bg-white shadow-md overflow-hidden transition hover:shadow-xl">
+      {/* IMAGE */}
+      <div className="relative h-44 w-full overflow-hidden">
+        <Image
+          src={image}
+          alt={title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          className="object-cover transition duration-300 group-hover:scale-105"
+        />
+
+        <div className="absolute top-3 left-3 bg-black/60 text-white text-xs px-3 py-1 rounded-full backdrop-blur">
+          {duration}
+        </div>
+      </div>
+
+      {/* CONTENT */}
+      <div className="p-5 space-y-3">
+        <h4 className="font-semibold text-gray-800 text-lg leading-snug">
+          {title}
+        </h4>
+
+        <p className="text-sm text-gray-500 line-clamp-2">{description}</p>
+
+        <p className="text-green-800 font-bold text-xl">
+          {price}
+          <span className="text-gray-400 text-sm font-normal"> / pax</span>
+        </p>
+
+        <div className="flex gap-2 pt-2">
+          <button className="flex-1 py-2 rounded-xl border border-gray-300 text-sm font-medium hover:bg-gray-100 transition">
+            Detail
+          </button>
+
+          <button className="flex-1 py-2 rounded-xl bg-green-700 text-white text-sm font-semibold hover:bg-green-800 transition">
+            Booking
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function TourPage() {
   return (
     <LandingPageLayout>
       <main className="bg-white text-gray-900">
         {/* HERO */}
-        <section className="relative h-[50vh] flex items-center justify-center text-center px-6">
+        <section className="relative h-[60vh] flex items-center justify-center text-center px-6">
           <Image
-            src="/images/g5.jpeg"
+            src="/images/tour.jpg"
             alt="Tour"
             fill
             className="object-cover"
@@ -83,48 +164,16 @@ export default function TourPage() {
 
         {/* TOUR LIST */}
         <section className="px-6 md:px-10 py-16">
-          <div className="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
             {tours.map((tour, index) => (
               <motion.div
                 key={tour.title}
-                className="group rounded-2xl overflow-hidden shadow hover:shadow-xl transition"
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                {/* IMAGE */}
-                <div className="relative h-60">
-                  <Image
-                    src={tour.image}
-                    alt={tour.title}
-                    width={500}
-                    height={300}
-                    className="object-cover w-full h-60 group-hover:scale-105 transition duration-300"
-                  />
-                </div>
-
-                {/* CONTENT */}
-                <div className="p-5">
-                  <div className="flex items-center gap-1 text-xs text-gray-500 mb-1">
-                    <MapPin className="w-4 h-4" />
-                    <span>{tour.location}</span>
-                  </div>
-
-                  <h3 className="font-semibold text-lg mb-2">{tour.title}</h3>
-
-                  <p className="text-green-700 font-bold mb-4">
-                    {tour.price}
-                    <span className="text-xs text-gray-500 font-normal">
-                      {" "}
-                      / pax
-                    </span>
-                  </p>
-
-                  <button className="w-full rounded-full bg-green-700 text-white py-2 text-sm font-semibold hover:bg-green-800 transition">
-                    View Details
-                  </button>
-                </div>
+                <Packages {...tour} />
               </motion.div>
             ))}
           </div>
