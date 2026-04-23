@@ -6,3 +6,20 @@
 body {
   overflow-x: hidden;
 }
+.testimonial-wrapper {
+  position: relative;
+}
+
+/* pagination custom */
+.custom-pagination .swiper-pagination-bullet {
+  width: 8px;
+  height: 8px;
+  background: #d1d5db;
+  opacity: 1;
+  border-radius: 999px;
+}
+
+.custom-pagination .swiper-pagination-bullet-active {
+  background: #166534;
+  width: 18px;
+}

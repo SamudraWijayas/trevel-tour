@@ -140,7 +140,89 @@ export default function Home() {
             </div>
           </div>
         </section>
+  <section className="px-3 md:px-10 py-16 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <motion.div
+              className="text-center mb-10"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
+              <h2 className="lg:text-4xl text-3xl font-bold">
+                About <span className="text-green-800">Ndestours</span>
+              </h2>
+              <p className="mt-3 text-gray-600 max-w-2xl mx-auto text-md">
+                <span className="font-semibold text-gray-900">Ndestours</span>{" "}
+                adalah penyedia jasa tour & event organizer terpercaya di
+                Indonesia. Kami menghadirkan pengalaman perjalanan dan event
+                yang terencana dengan baik, profesional, dan berkesan.
+              </p>
+            </motion.div>
 
+            <motion.div
+              className="relative overflow-hidden rounded-3xl mb-10 h-[300px] md:h-[420px]"
+              initial={{ opacity: 0, scale: 1.1 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <Image
+                src="/images/DSC_1197.JPG.jpeg"
+                alt="Ndestours Activity"
+                fill
+                // quality={100}
+                sizes="100vw"
+                className="object-cover"
+              />
+            </motion.div>
+
+            {/* CONTENT */}
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              {/* TEXT */}
+              <motion.div
+                className="text-gray-600 text-md leading-relaxed"
+                initial={{ opacity: 0, x: -40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: "easeOut" }}
+              >
+                <p>
+                  Dari tahap perencanaan hingga pelaksanaan, kami berkomitmen
+                  untuk mengelola setiap detail dengan maksimal. Ndestours telah
+                  dipercaya dalam menangani berbagai kebutuhan event, mulai dari
+                  corporate gathering, outing perusahaan, team building, hingga
+                  perjalanan wisata keluarga.
+                </p>
+
+                <p className="mt-4">
+                  Dengan tim profesional dan pengalaman yang matang, kami
+                  memastikan setiap acara berjalan lancar, terorganisir, dan
+                  memberikan pengalaman terbaik bagi setiap klien.
+                </p>
+              </motion.div>
+
+              {/* STATS */}
+              <motion.div
+                className="flex gap-10 md:justify-end"
+                initial={{ opacity: 0, x: 40 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }}
+              >
+                <div>
+                  <p className="text-4xl font-bold text-green-800">150+</p>
+                  <p className="text-sm text-gray-500">Happy Clients</p>
+                </div>
+
+                <div>
+                  <p className="text-4xl font-bold text-green-800">10+</p>
+                  <p className="text-sm text-gray-500">Years Experience</p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </section>
         {/* Partners */}
         <section className="mx-auto max-w-7xl px-6 py-12">
           <div className="grid grid-cols-3 items-center gap-6 md:grid-cols-3">
