@@ -151,7 +151,7 @@ const Navbar = () => {
         </button>
 
         {/* MOBILE BUTTON */}
-        <button className="md:hidden" onClick={() => setOpen(!open)}>
+        <button className={`md:hidden ${scrolled ? "text-black" : "text-white"}`} onClick={() => setOpen(!open)}>
           {open ? <X /> : <Menu />}
         </button>
       </div>

@@ -114,7 +114,7 @@ const banner = [
 
 export default function Home() {
   const [activeIndex, setActiveIndex] = useState(0);
-  
+
   return (
     <LandingPageLayout>
       <main className="bg-white text-gray-900">
@@ -124,7 +124,7 @@ export default function Home() {
           <div className="relative z-10 mx-auto flex h-full w-full items-center">
             {/* BANNER CARD */}
             <div className="relative w-full overflow-hidden ">
-              <div className="relative h-[60vh] md:h-screen w-full">
+              <div className="relative h-screen w-full">
                 <Swiper
                   pagination={{ clickable: true }}
                   loop
@@ -816,9 +816,10 @@ export default function Home() {
             <div className="grid md:grid-cols-2 gap-10">
               {/* LEFT - INFO */}
               <motion.div
-                className="space-y-8 "
-                initial={{ opacity: 0, x: -40 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                className="space-y-8"
+                initial={{ opacity: 0, y: 30, scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut" }}
                 viewport={{ once: true }}
               >
                 {/* HEADER */}
@@ -906,8 +907,9 @@ ${message}`;
                   window.open(url, "_blank");
                 }}
                 className="bg-white border border-gray-200 p-6 md:p-8 rounded-2xl space-y-5 shadow-sm"
-                initial={{ opacity: 0, x: 40 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 30, scale: 0.98 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                transition={{ duration: 0.6, ease: "easeOut", delay: 0.1 }}
                 viewport={{ once: true }}
               >
                 {/* HEADER */}
