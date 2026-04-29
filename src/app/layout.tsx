@@ -18,10 +18,10 @@ export const metadata: Metadata = {
       "Ndes Tour - Travel, Umroh & Haji | Paket Wisata & Perjalanan Terpercaya",
     template: "%s | Ndes Tour",
   },
-  authors: [{ name: "Ndes Tour", url: "https://www.ndestour.com" }],
+  authors: [{ name: "Ndes Tour", url: "https://travel.jokindes.com" }],
   description:
     "Ndes Tour menyediakan layanan travel & tours, paket wisata, open trip, serta layanan umroh dan haji terpercaya. Nikmati perjalanan wisata dan ibadah dengan harga terjangkau, aman, dan pelayanan profesional.",
-  metadataBase: new URL("https://www.ndestour.com"),
+  metadataBase: new URL("https://travel.jokindes.com"),
   icons: {
     icon: "/favicon.ico",
   },
@@ -38,17 +38,17 @@ export const metadata: Metadata = {
     title: "Ndes Tour - Travel, Umroh & Haji Terpercaya",
     description:
       "Ndes Tour melayani paket wisata, open trip, serta perjalanan umroh dan haji dengan pelayanan profesional dan terpercaya.",
-    images: ["https://www.ndestour.com/opengraph-image.jpg"],
+    images: ["/opengraph-image.png"],
   },
   openGraph: {
     title: "Ndes Tour - Travel, Umroh & Haji Terpercaya",
     description:
       "Layanan lengkap Ndes Tour: paket wisata, open trip, serta umroh dan haji dengan pelayanan aman, nyaman, dan terpercaya di Indonesia.",
-    url: "https://www.ndestour.com",
+    url: "https://travel.jokindes.com",
     siteName: "Ndes Tour",
     images: [
       {
-        url: "https://www.ndestour.com/opengraph-image.jpg",
+        url: "/opengraph-image.png",
         width: 1200,
         height: 630,
         alt: "Ndes Tour Travel Umroh Haji",
